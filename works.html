@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Works — Emma Chataigné</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 22px 30px;
+      color: #111;
+      background: #fff;
+      font-family: "Source Code Pro", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site-name {
+      font-weight: 700;
+    }
+
+    .contact-link {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    main {
+      margin-top: 90px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .project {
+      margin-bottom: 50px;
+    }
+
+    .project h2 {
+      margin-bottom: 8px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .project p {
+      max-width: 600px;
+      margin-bottom: 18px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 18px 20px;
+      }
+
+      main {
+        margin-top: 60px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: auto;
+        max-height: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="site-name" href="index.html">Emma Chataigné</a>
+    <a class="contact-link" href="mailto:your-email@example.com">Contact</a>
+  </header>
+
+  <main>
+    <h1>Works</h1>
+
+    <article class="project">
+      <h2>Project One</h2>
+      <p>Write a short description of the project here.</p>
+
+      <div class="gallery">
+        <img src="images/project-one-1.jpg" alt="Project One, image 1">
+        <img src="images/project-one-2.jpg" alt="Project One, image 2">
+      </div>
+    </article>
+
+    <article class="project">
+      <h2>Project Two</h2>
+      <p>Write a short description of the project here.</p>
+
+      <div class="gallery">
+        <img src="images/project-two-1.jpg" alt="Project Two, image 1">
+        <img src="images/project-two-2.jpg" alt="Project Two, image 2">
+      </div>
+    </article>
+
+    <a class="back-link" href="index.html">← Home</a>
+  </main>
+</body>
+</html>
