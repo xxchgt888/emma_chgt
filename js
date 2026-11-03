@@ -421,7 +421,7 @@
             // debug: report created labels and pick meshes
             console.log('Labels created:', labels.length);
 
-            const container = document.querySelector("#three-container");
+            container = document.querySelector("#three-container");
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setClearColor(0xffffff);
