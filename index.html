@@ -1,243 +1,209 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mon portfolio</title>
-  <meta name="description" content="Découvrez mon portfolio, mes compétences et mes projets.">
+  <title>Your Name — Portfolio</title>
 
   <style>
-    :root {
-      --fond: #f7f7f2;
-      --texte: #20231f;
-      --secondaire: #656b63;
-      --accent: #526b4f;
-      --carte: #fff;
-      --bordure: #e4e6df;
+    * {
+      box-sizing: border-box;
     }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      background: var(--fond);
-      color: var(--texte);
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
-
-    a { color: inherit; }
-
-    .conteneur {
-      width: min(100% - 40px, 960px);
-      margin-inline: auto;
+      background: #fff;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     header {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--bordure);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 22px 30px;
+    }
+
+    header a,
+    .work a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header a:hover,
+    .work a:hover {
+      text-decoration: underline;
+    }
+
+    .site-name {
+      font-weight: bold;
     }
 
     nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-weight: 750;
-      text-decoration: none;
-    }
-
-    .liens-nav {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .liens-nav a {
-      color: var(--secondaire);
-      text-decoration: none;
-    }
-
-    .intro {
-      padding: 96px 0 76px;
-    }
-
-    .etiquette {
-      color: var(--accent);
-      font-size: .9rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 700px;
-      margin: 12px 0;
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      line-height: 1.05;
-      letter-spacing: -.05em;
-    }
-
-    .intro p {
-      max-width: 600px;
-      color: var(--secondaire);
-      font-size: 1.15rem;
-    }
-
-    .bouton {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 12px 18px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-weight: 650;
-    }
-
-    section { padding: 48px 0; }
-
-    h2 {
-      margin: 0 0 20px;
-      font-size: 2rem;
-      letter-spacing: -.03em;
-    }
-
-    .apropos {
-      max-width: 680px;
-      color: var(--secondaire);
-    }
-
-    .grille {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 18px;
     }
 
-    .carte {
-      padding: 24px;
-      border: 1px solid var(--bordure);
-      border-radius: 14px;
-      background: var(--carte);
+    main {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .carte h3 { margin-top: 0; }
-
-    .carte p { color: var(--secondaire); }
-
-    .competences {
+    .intro {
+      min-height: 75vh;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 0;
-      list-style: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    .competences li {
-      padding: 8px 13px;
-      border: 1px solid var(--bordure);
-      border-radius: 999px;
-      background: var(--carte);
+    .intro img {
+      width: min(460px, 90%);
+      max-height: 340px;
+      object-fit: cover;
+      margin-bottom: 24px;
     }
 
-    .contact {
-      padding-bottom: 80px;
+    .intro p {
+      max-width: 450px;
+      margin: 0;
+    }
+
+    section {
+      padding: 40px 0 70px;
+      scroll-margin-top: 20px;
+    }
+
+    h2 {
+      margin: 0 0 24px;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .bio {
+      max-width: 620px;
+    }
+
+    .work {
+      padding: 18px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .work h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      font-weight: normal;
+    }
+
+    .work p {
+      max-width: 600px;
+      margin: 0 0 14px;
+      color: #555;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: #eee;
     }
 
     footer {
-      padding: 24px 0;
-      border-top: 1px solid var(--bordure);
-      color: var(--secondaire);
-      font-size: .9rem;
+      padding: 20px 30px 30px;
+      color: #666;
+      font-size: 12px;
     }
 
-    @media (max-width: 540px) {
-      nav { align-items: flex-start; flex-direction: column; }
-      .intro { padding-top: 64px; }
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 20px;
+      }
+
+      main {
+        width: calc(100% - 40px);
+      }
+
+      .intro {
+        min-height: 65vh;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: 220px;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <nav class="conteneur" aria-label="Navigation principale">
-      <a class="logo" href="#">Mon Portfolio</a>
-      <div class="liens-nav">
-        <a href="#apropos">À propos</a>
-        <a href="#projets">Projets</a>
-        <a href="#competences">Compétences</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <a class="site-name" href="#">Your Name</a>
+    <nav>
+      <a href="#bio">Bio</a>
+      <a href="#works">Works</a>
     </nav>
   </header>
 
   <main>
-    <section class="intro conteneur">
-      <span class="etiquette">Portfolio · [eo_chgt]</span>
-      <h1>[Emma Chataigné].</h1>
-      <p>
-        Je suis [artiste-chercheuse-plasticienne].
-      </p>
-      <a class="bouton" href="#projets">Découvrir mes projets</a>
-    </section>
+    <div class="intro">
+      <!-- Replace this with your own image, or remove this line -->
+      <img src="images/your-image.jpg" alt="A selection of my work">
+      <p>[Artist / designer / photographer] based in [your city].</p>
+    </div>
 
-    <section id="apropos" class="conteneur">
-      <h2>À propos</h2>
-      <p class="apropos">
-        Présentez-vous en quelques phrases : votre parcours, ce qui vous
-        intéresse et le type de projets que vous aimeriez réaliser.
+    <section id="bio">
+      <h2>Bio</h2>
+      <p class="bio">
+        I am a [your profession] interested in [your interests or themes].
+        My work explores [describe your work in one or two sentences].
       </p>
     </section>
 
-    <section id="projets" class="conteneur">
-      <h2>Projets</h2>
-      <div class="grille">
-        <article class="carte">
-          <h3>Projet numéro un</h3>
-          <p>Décrivez le projet, votre rôle et les outils utilisés.</p>
-          <a href="#">Voir le projet →</a>
-        </article>
-        <article class="carte">
-          <h3>Projet numéro deux</h3>
-          <p>Ajoutez une courte présentation de ce que vous avez réalisé.</p>
-          <a href="#">Voir le projet →</a>
-        </article>
-        <article class="carte">
-          <h3>Projet numéro trois</h3>
-          <p>Vous pouvez aussi présenter un projet d’école ou personnel.</p>
-          <a href="#">Voir le projet →</a>
-        </article>
-      </div>
+    <section id="works">
+      <h2>Works</h2>
+
+      <article class="work">
+        <h3>Project One</h3>
+        <p>A short description of this project, when it was made, and what it explores.</p>
+        <div class="gallery">
+          <img src="images/project-one-1.jpg" alt="Project One, image 1">
+          <img src="images/project-one-2.jpg" alt="Project One, image 2">
+        </div>
+      </article>
+
+      <article class="work">
+        <h3>Project Two</h3>
+        <p>A short description of this project.</p>
+        <div class="gallery">
+          <img src="images/project-two-1.jpg" alt="Project Two, image 1">
+          <img src="images/project-two-2.jpg" alt="Project Two, image 2">
+        </div>
+      </article>
     </section>
 
-    <section id="competences" class="conteneur">
-      <h2>Compétences</h2>
-      <ul class="competences">
-        <li>Compétence 1</li>
-        <li>Compétence 2</li>
-        <li>Compétence 3</li>
-        <li>Outil ou logiciel</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="contact conteneur">
-      <h2>Me contacter</h2>
-      <p>Un projet ou une question ? Écrivez-moi.</p>
-      <a class="bouton" href="mailto:votre.adresse@email.com">Envoyer un courriel</a>
-      <p>
-        <a href="https://github.com/">GitHub</a> ·
-        <a href="https://www.linkedin.com/">LinkedIn</a>
-      </p>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><a href="mailto:you@example.com">you@example.com</a></p>
+      <p><a href="https://instagram.com/">Instagram</a></p>
     </section>
   </main>
 
   <footer>
-    <div class="conteneur">© 2026 [Emma Chataigné] · Portfolio</div>
+    © 2026 Your Name
   </footer>
 </body>
 </html>
