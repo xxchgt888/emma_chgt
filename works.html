@@ -129,6 +129,63 @@
   background: transparent;
 }
 
+    .carousel {
+  position: relative;
+  margin-top: 16px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  cursor: grab;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-track img {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 85%;
+  height: 280px;
+  object-fit: contain;
+  background: transparent;
+  scroll-snap-align: start;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.carousel-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  font: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.carousel-arrow.prev {
+  left: 8px;
+}
+
+.carousel-arrow.next {
+  right: 8px;
+}
+
+@media (max-width: 600px) {
+  .carousel-track img {
+    max-width: 90%;
+  }
+}
+
 @media (max-width: 600px) {
   .gallery-row {
     grid-template-columns: 1fr;
@@ -266,6 +323,45 @@ footer {
      </article>
 
 </main>
+  <script>
+  document.querySelectorAll(".carousel").forEach((carousel) => {
+    const track = carousel.querySelector(".carousel-track");
+
+    carousel.querySelector(".prev").addEventListener("click", () => {
+      track.scrollBy({ left: -track.clientWidth * 0.8, behavior: "smooth" });
+    });
+
+    carousel.querySelector(".next").addEventListener("click", () => {
+      track.scrollBy({ left: track.clientWidth * 0.8, behavior: "smooth" });
+    });
+
+    let isDragging = false;
+    let startX = 0;
+    let startScroll = 0;
+
+    track.addEventListener("pointerdown", (event) => {
+      if (event.pointerType !== "mouse" || event.button !== 0) return;
+      isDragging = true;
+      startX = event.clientX;
+      startScroll = track.scrollLeft;
+      track.setPointerCapture(event.pointerId);
+    });
+
+    track.addEventListener("pointermove", (event) => {
+      if (!isDragging) return;
+      track.scrollLeft = startScroll - (event.clientX - startX);
+    });
+
+    track.addEventListener("pointerup", () => {
+      isDragging = false;
+    });
+
+    track.addEventListener("pointercancel", () => {
+      isDragging = false;
+    });
+  });
+</script>
+
     
 </body>
 </html>
