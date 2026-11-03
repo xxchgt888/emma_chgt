@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Works — Emma Chataigné</title>
+  <title>Emma Chataigné</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -15,91 +15,157 @@
     }
 
     body {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 22px 30px;
-      color: #111;
+      margin: 0;
       background: #fff;
+      color: #111;
       font-family: "Source Code Pro", monospace;
-      font-size: 13px;
-      line-height: 1.6;
+      font-size: 20px;
+      line-height: 1.5;
     }
 
     header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: baseline;
+      padding: 22px 30px;
     }
 
-    a {
-      color: #111;
+    header a,
+    .work a {
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
+    header a:hover,
+    .work a:hover {
       text-decoration: underline;
     }
 
-    .site-name {
-      font-weight: 700;
+.site-name {
+      font-weight: bold;
     }
 
-    .contact-link {
-      font-size: 11px;
-      font-weight: 700;
+    nav {
+      display: flex;
+      gap: 18px;
     }
 
     main {
-      margin-top: 90px;
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    h1 {
-      margin-bottom: 40px;
-      font-size: 22px;
-      font-weight: 500;
+.intro {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    .project {
-      margin-bottom: 50px;
+.intro img {
+      width: min(700px, 95%);
+      max-height: 500px;
+      object-fit: cover;
+      margin-bottom: 24px;
     }
 
-    .project h2 {
-      margin-bottom: 8px;
-      font-size: 16px;
-      font-weight: 500;
+    section {
+      padding: 40px 0 70px;
+      scroll-margin-top: 20px;
     }
 
-    .project p {
-      max-width: 600px;
-      margin-bottom: 18px;
+    h2 {
+      margin: 0 0 24px;
+      font-size: 14px;
+      font-weight: normal;
     }
 
-    .gallery {
+.bio {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+    }
+
+.work {
+      padding: 18px 0;
+      border-top: 1px solid #ddd;
+    }
+
+.work h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 500;
+    }
+
+.work p {
+  max-width: 600px;
+  margin: 0 0 14px;
+  color: #111;
+  font-size: 12px;
+    }
+
+.gallery {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
+      margin-top: 16px;
     }
 
-    .gallery img {
-      display: block;
-      width: 100%;
-      height: 220px;
-      object-fit: contain;
-      background: #fff;
+.gallery img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background: #eee;
     }
 
-    .back-link {
-      display: inline-block;
-      margin-top: 30px;
+footer {
+      padding: 20px 30px 30px;
+      color: #111;
+      font-size: 12px;
     }
 
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tagline {
+  display: block;
+  font-size: 12px;
+  color: #555;
+}
+
+.home-links {
+  display: flex;
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.home-links a {
+  color: #111;
+  text-decoration: none;
+}
+
+.home-links a:hover {
+  text-decoration: underline;
+}
+ 
     @media (max-width: 600px) {
-      body {
+      header {
         padding: 18px 20px;
       }
 
       main {
-        margin-top: 60px;
+        width: calc(100% - 40px);
+      }
+
+      .intro {
+        min-height: 65vh;
       }
 
       .gallery {
@@ -107,43 +173,95 @@
       }
 
       .gallery img {
-        height: auto;
-        max-height: 400px;
+        height: 220px;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <a class="site-name" href="index.html">Emma Chataigné</a>
-    <a class="contact-link" href="mailto:your-email@example.com">Contact</a>
-  </header>
+<header>
+  <div class="brand">
+    <a class="site-name" href="#">Emma Chataigné</a>
+    <span class="tagline">Visual artist, researcher and performer based in Geneva</span>
+  </div>
+ 
+</header>
 
   <main>
-    <h1>Works</h1>
+    <div class="intro">
+  <img src="images/couverture.png">
 
-    <article class="project">
-      <h2>Project One</h2>
-      <p>Write a short description of the project here.</p>
+  <nav class="home-links">
+  <a href="works.html">Works</a>
+  <a href="biography.html">Biography</a>
+      My installations, writings and performances explore the concept of the bodies, objects and technologies’s action power, and my work revolves around the duality between organic and digital
+materials. By shaping ceramic pieces, I explore systems of objects as alien species, derivative materials, and semiotic devices through the prism of an erotic, interspecies relationship.
+My installations, sculptures and writings are situated at the intersection of the scientific, cryptographic and technological, and seek to challenge the dominant and categorical systems of
+representation that oppose the human/animal/object/machine/nature/culture. I subscribe to a logic of potential emancipation of non- reproductive desires in the face of capitalist and techno-biopolitical dynamics.
+</nav>
+</div>
 
-      <div class="gallery">
-        <img src="images/project-one-1.jpg" alt="Project One, image 1">
-        <img src="images/project-one-2.jpg" alt="Project One, image 2">
-      </div>
-    </article>
 
-    <article class="project">
-      <h2>Project Two</h2>
-      <p>Write a short description of the project here.</p>
+      <article class="work">
+        <h3>Meet the world’s first female crash test dummy, her name is set 50f</h3>
+        <p>Meet the world’s first female crash test dummy, her name is set 50f, 
+          is part of a research project exploring the multiple uses and functions of objects in contexts of the militarization of objects and bodies—driven by technological advances and acceleration—and, 
+          by extension, guided by CRASH. The notion of “drive” is central to this project and to my work, understood as that which provokes a gesture, a movement, leading to a behavior. 
+          Symbols coexist with texts such as scores and instruction manuals that blend various types of objects and functions, drawn from industrial, clinical, and military contexts. 
+          In dialogue with the video, the ceramics here serve as a memory of gestures and bear the imprints of proximity to a body.</p>
+        <div class="gallery">
+          <img src="images/meet 5f4.jpg">
+          <img src="images/meet 5f5.jpg">
+          <img src="images/meet 5f1.png">
+          <img src="images/meet 5f2.jpg">
+        </div>
+      </article>
 
-      <div class="gallery">
-        <img src="images/project-two-1.jpg" alt="Project Two, image 1">
-        <img src="images/project-two-2.jpg" alt="Project Two, image 2">
-      </div>
-    </article>
+      <article class="work">
+        <h3>Flirt-O.S</h3>
+        <p>Flirt-O.S is a performance presented as part of the group exhibition Cyber Cypher. 
+          The performance engages both the performers’ bodies and those of ceramic and manufactured objects, drawing on gestures from various repertoires 
+          — such as bodybuilding and the military — while playing on their distortions : 
+          « vehium » / i love my computer / flirt-objet / html & poétique de la mécanique</p>
+        <div class="gallery">
+          <img src="images/2026_CYBERCYPHER_19.jpg">
+          <img src="images/2026_CYBERCYPHER_09.jpg">
+          <img src="images/cybercypher.JPG">
+        </div>
+      </article>
+    </section>
 
-    <a class="back-link" href="index.html">← Home</a>
-  </main>
+     <article class="work">
+        <h3>CyberCrushInAWetShowcase</h3>
+        <p>CyberCrushInAWetShowcase reveals, via a motorized surveillance camera: a metal seat and ceramics that simultaneously embody alien matter, masturbatory objects, and prosthetic technology. 
+          The camera, used as a tool for monitoring the existing in military/technocratic contexts, is here driven by an affectionate intention, not in the act of capture but in an attempt at extension and connectedness.
+          [The QR code provides access to the camera footage that recorded the interior environment of the display case during the installation and to images of mechanical interactions between humans and ceramics].</p>
+        <div class="gallery">
+          <img src="images/cybercrush.JPG">
+          <img src="images/cybercrush1.heic">
+        </div>
+      </article>
+    </section>
+
+    <article class="work">
+        <h3>Orgie aliène sur tapis de glaise</h3>
+        <p>Orgie aliène sur tapis de glaise unfolds as a poetic-technical intervention that seeks to reveal and question the interstitial dynamics between bodies, materials, and languages, 
+          confronting the dominant imaginaries of science fiction and pop culture with more hybrid and unexpected relational forms. 
+          My project is rooted in a critical approach to regimes of attention, disciplined bodies, and mechanisms of cyber-authority, using performance as a lever for experimentation: 
+          the dialogue between a highly mediatized pop soundtrack, live ceramic sounds, repetitive gestures, and voices extracted from blogs reveals how technologies and digital fantasies structure our subjectivities.
+          By appropriating visual, auditory, and gestural codes from web culture and science fiction, I seek to propose an alternative imaginary space 
+          where corp·x·s-object·x·s-machine·x·s interact, transform, and reconnect with a differently distributed agency.</p>
+        <div class="gallery">
+          <img src="images/orgi aliène_instal5.jpg">
+          <img src="images/orgi aliène_instal.jpg">
+          <img src="images/orgi aliène_instal4.jpg">
+          <img src="images/orgi aliène_instal7.jpg">
+          <img src="images/orgi aliène_perfo3.jpeg">
+          <img src="images/orgi aliène_perfo5.TIF">
+        </div>
+      </article>
+    </section>
+    
 </body>
 </html>
