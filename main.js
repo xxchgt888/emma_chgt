@@ -66,6 +66,8 @@
 
         let group;
         let container, stats;
+        container = document.querySelector("#container");
+
         // labels are static in this example (movement/velocity logic removed)
         let camera, scene, renderer;
         let controls;
@@ -421,12 +423,10 @@
             // debug: report created labels and pick meshes
             console.log('Labels created:', labels.length);
 
-            container = document.querySelector("#three-container");
-
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setClearColor(0xffffff);
             renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(container.clientWidth, container.clientHeight);
             renderer.setAnimationLoop(animate);
             container.appendChild(renderer.domElement);
             // append label renderer after the WebGL canvas so labels are on top
