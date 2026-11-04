@@ -144,6 +144,37 @@ footer {
   text-decoration: underline;
 }
 
+    header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 22px 30px;
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.top-nav a,
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.top-nav a:hover,
+header a:hover {
+  text-decoration: underline;
+}
+
+.contact-link {
+  font-size: 12px;
+  font-weight: 700;
+}
+
  
     @media (max-width: 600px) {
       header {
@@ -171,17 +202,6 @@ footer {
   gap: 18px;
   font-size: 12px;
   font-weight: 700;
-}
-
-.top-nav a,
-header a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.top-nav a:hover,
-header a:hover {
-  text-decoration: underline;
 }
 
 .contact-link {
