@@ -238,6 +238,45 @@ footer {
         min-height: 65vh;
       }
     }
+    .lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  display: block;
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font: inherit;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.carousel-track img {
+  cursor: zoom-in;
+}
   </style>
 </head>
 
@@ -326,6 +365,11 @@ footer {
      </article>
 
 </main>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+  <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
+  <img src="" alt="">
+</div>
+  
   <script>
   document.querySelectorAll(".carousel").forEach((carousel) => {
     const track = carousel.querySelector(".carousel-track");
@@ -363,6 +407,33 @@ footer {
       isDragging = false;
     });
   });
+    const lightbox = document.querySelector("#lightbox");
+const lightboxImage = lightbox.querySelector("img");
+const closeButton = lightbox.querySelector(".lightbox-close");
+
+document.querySelectorAll(".carousel-track img").forEach((image) => {
+  image.addEventListener("click", () => {
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.classList.add("open");
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  lightboxImage.src = "";
+}
+
+closeButton.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeLightbox();
+});
+
 </script>
 
     
