@@ -407,17 +407,33 @@ footer {
       isDragging = false;
     });
   });
-    const lightbox = document.querySelector("#lightbox");
+const lightbox = document.querySelector("#lightbox");
 const lightboxImage = lightbox.querySelector("img");
 const closeButton = lightbox.querySelector(".lightbox-close");
+const prevButton = lightbox.querySelector(".lightbox-arrow.prev");
+const nextButton = lightbox.querySelector(".lightbox-arrow.next");
+
+let currentImages = [];
+let currentIndex = 0;
+
+function showImage(index) {
+  currentIndex = (index + currentImages.length) % currentImages.length;
+  const image = currentImages[currentIndex];
+  lightboxImage.src = image.src;
+  lightboxImage.alt = image.alt;
+}
 
 document.querySelectorAll(".carousel-track img").forEach((image) => {
   image.addEventListener("click", () => {
-    lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
+    currentImages = [...image.closest(".carousel-track").querySelectorAll("img")];
+    currentIndex = currentImages.indexOf(image);
+    showImage(currentIndex);
     lightbox.classList.add("open");
   });
 });
+
+prevButton.addEventListener("click", () => showImage(currentIndex - 1));
+nextButton.addEventListener("click", () => showImage(currentIndex + 1));
 
 function closeLightbox() {
   lightbox.classList.remove("open");
@@ -431,7 +447,11 @@ lightbox.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
+  if (!lightbox.classList.contains("open")) return;
+
   if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+  if (event.key === "ArrowRight") showImage(currentIndex + 1);
 });
 
 </script>
