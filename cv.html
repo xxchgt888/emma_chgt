@@ -1,1 +1,241 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Emma Chataigné</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eee;
+      color: #111;
+      font-family: "Source Code Pro", monospace;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 22px 30px;
+    }
+
+    header a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header a:hover,
+    .page-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .site-name {
+      font-weight: 700;
+    }
+
+    .contact-link {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    main {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .page-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 10px 0 30px;
+      font-size: 12px;
+    }
+
+    .page-nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cv-intro {
+      max-width: 620px;
+      margin: 30px auto 75px;
+      padding: 28px;
+      border: 1px solid #111;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .cv-intro h1 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .cv-intro p {
+      margin: 7px 0;
+    }
+
+    .cv-intro a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cv-intro a:hover {
+      text-decoration: underline;
+    }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 55px 40px;
+      padding-bottom: 70px;
+    }
+
+    .cv-column {
+      display: flex;
+      flex-direction: column;
+      gap: 45px;
+    }
+
+    .cv-section h2 {
+      margin: 0 0 20px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .cv-section ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .cv-section li {
+      margin-bottom: 8px;
+    }
+
+    .cv-section li::before {
+      content: "◊ ";
+    }
+
+    @media (max-width: 650px) {
+      header {
+        padding: 18px 20px;
+      }
+
+      main {
+        width: calc(100% - 40px);
+      }
+
+      .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .cv-column {
+        gap: 35px;
+      }
+
+      .cv-intro {
+        margin: 25px auto 50px;
+        padding: 20px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="site-name" href="index.html">Emma Chataigné</a>
+    <a class="contact-link" href="mailto:emma.chataigne@outlook.fr">Contact</a>
+  </header>
+
+  <main>
+    <nav class="page-nav" aria-label="Navigation principale">
+      <a href="index.html">← Return</a>
+      <a href="works.html">Works</a>
+      <a href="biography.html">Biography</a>
+      <a href="cv.html">CV</a>
+    </nav>
+
+    <section class="cv-intro">
+      <h1>Emma Chataigné [Elle]</h1>
+      <p>
+        <a href="mailto:emma.chataigne@outlook.fr">emma.chataigne@outlook.fr</a>
+      </p>
+    </section>
+
+    <div class="cv-grid">
+      <div class="cv-column">
+        <section class="cv-section">
+          <h2>Performances</h2>
+          <ul>
+            <li>2026 : Performeuse et co-autrice de <em>Flirt-O.S</em>, Duplex, Genève</li>
+            <li>2025 : Performeuse et co-autrice de <em>MyVeryFavouriteGear</em>, collectif MyFavouriteGear, Théâtre de Sévelin, Lausanne</li>
+            <li>2025 : Performeuse dans la pièce de Joan Jonas, <em>Mirror Piece</em>, Genève</li>
+            <li>2024 : Performeuse et co-autrice dans la pièce <em>When Satiety Comes ?</em>, Espace Charmilles, Genève</li>
+            <li>2023 : Performeuse dans la pièce de Tamara Cubas, <em>Ofrenda para el Monstruo</em>, Festival de la Bâtie</li>
+          </ul>
+        </section>
+
+        <section class="cv-section">
+          <h2>Expositions</h2>
+          <ul>
+            <li>2026 : <em>Cyber Cypher</em>, exposition collective, Duplex, Genève</li>
+            <li>2026 : <em>CyberCrushInAWetShowcase</em>, duo show avec le collectif Kimera, Dukat, Carouge</li>
+          </ul>
+        </section>
+
+        <section class="cv-section">
+          <h2>Compétences</h2>
+          <ul>
+            <li>Suite Adobe, Mad Mapper, Max MSP, Arduino, Raspberry Pi et écran RB-TFT, Suite Microsoft, Visual Studio Code</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="cv-column">
+        <section class="cv-section">
+          <h2>Formations</h2>
+          <ul>
+            <li>En cours : Publication collective Master CCC — Théâtre de l’Usine, Genève</li>
+            <li>2025 à ce jour : Master CCC (Critical, Curatorial &amp; Cybermedia), Arts Visuels à la HEAD, Genève</li>
+            <li>2022–2025 : Bachelor en Arts Visuels à la HEAD, option Drama, Genève</li>
+            <li>2021–2022 : Classe préparatoire artistique à EMA, Vitry-sur-Seine</li>
+            <li>2018–2021 : Bachelor de médiation culturelle à la Sorbonne-Nouvelle Paris 3</li>
+          </ul>
+        </section>
+
+        <section class="cv-section">
+          <h2>Expériences professionnelles</h2>
+          <ul>
+            <li>En cours : Serveuse à la Buvette du Théâtre de l’Orangerie, Genève</li>
+            <li>Mars–juin 2026 : Stage Communication &amp; Médiation culturelle pour Documents d’artistes Genève</li>
+            <li>2024 : Publication dans la revue « Mets tes Palmes »</li>
+            <li>2019–2022 : Serveuse au restaurant Glou, Paris</li>
+            <li>2021 : Participation au « Programme des Jeunes Reporters » au théâtre de La Colline, Paris</li>
+            <li>2020 : Serveuse bénévole aux « Grands Voisins », association</li>
+            <li>2020 : Bénévole au cinéma « La Clef », Paris</li>
+            <li>2019–2020 : Agent de réception et visites guidées au Panthéon, Paris</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
 
