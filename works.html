@@ -200,6 +200,38 @@
   right: 15px;
 }
 
+    .image-link {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 280px;
+}
+
+.image-link img {
+  display: block;
+  height: 280px;
+  width: auto;
+  max-width: 85%;
+  cursor: pointer;
+}
+
+.click-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4px 8px;
+  background: #eee;
+  color: #111;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.image-link:hover .click-label {
+  opacity: 1;
+}
+
 @media (max-width: 600px) {
   .carousel-track img {
     max-width: 90%;
@@ -305,7 +337,17 @@ footer {
 .lightbox-close {
   cursor: pointer;
 }
+.carousel-track img {
+  cursor: pointer;
+}
 
+.carousel-track img:hover {
+  /* Le curseur reste une main ; le texte est affiché par l’indicateur ci-dessous. */
+}
+
+.carousel-track {
+  position: relative;
+}
   </style>
 </head>
 
@@ -328,10 +370,25 @@ footer {
   <button class="carousel-arrow prev" type="button" aria-label="Images précédentes">←</button>
 
   <div class="carousel-track">
-    <img src="images/meet 5f4.jpg" alt="Projet Meet the world's first female crash test dummy">
+   <span class="image-link">
+  <img src="images/meet 5f4.jpg" alt="Projet Meet the world's first female crash test dummy">
+  <span class="click-label">click here</span>
+</span>
+    
+    <span class="image-link">
     <img src="images/meet 5f5.jpg" alt="Projet Meet the world's first female crash test dummy">
+       <span class="click-label">click here</span>
+       </span>
+    
+     <span class="image-link">
     <img src="images/meet 5f1.png" alt="Projet Meet the world's first female crash test dummy">
+        <span class="click-label">click here</span>
+        </span>
+    
+    <span class="image-link">
     <img src="images/meet 5f2.jpg" alt="Projet Meet the world's first female crash test dummy">
+      <span class="click-label">click here</span>
+       </span>
   </div>
 
   <button class="carousel-arrow next" type="button" aria-label="Images suivantes">→</button>
@@ -347,9 +404,21 @@ footer {
         <div class="carousel">
   <button class="carousel-arrow prev" type="button" aria-label="Images précédentes">←</button>
            <div class="carousel-track">
+            
+             <span class="image-link">
           <img src="images/2026_CYBERCYPHER_19.jpg" alt="Projet Flirt-O.S">
+               <span class="click-label">click here</span>
+                </span>
+             
+             <span class="image-link">
           <img src="images/2026_CYBERCYPHER_09.jpg" alt="Projet Flirt-O.S">
+               <span class="click-label">click here</span>
+                </span>
+             
+             <span class="image-link">
           <img src="images/cybercypher.JPG" alt="Projet Flirt-O.S">
+               <span class="click-label">click here</span>
+                </span>
         </div>
       <button class="carousel-arrow next" type="button" aria-label="Images suivantes">→</button>
       </div>
@@ -364,8 +433,16 @@ footer {
         <div class="carousel">
   <button class="carousel-arrow prev" type="button" aria-label="Images précédentes">←</button>
            <div class="carousel-track">
+             
+             <span class="image-link">
           <img src="images/cybercrush.JPG" alt="Projet CyberCrushInAWetShowcase">
+               <span class="click-label">click here</span>
+                </span>
+             
+             <span class="image-link">
           <img src="images/cybercrush1.heic" alt="Projet CyberCrushInAWetShowcase">
+               <span class="click-label">click here</span>
+                </span>
          </div>
      <button class="carousel-arrow next" type="button" aria-label="Images suivantes">→</button>
     </div>
@@ -383,11 +460,31 @@ footer {
         <div class="carousel">
   <button class="carousel-arrow prev" type="button" aria-label="Images précédentes">←</button>
            <div class="carousel-track">
+             
+             <span class="image-link">
           <img src="images/orgi aliène_instal5.jpg" alt="Projet Orgie aliène sur tapis de glaise">
+               <span class="click-label">click here</span>
+                </span>
+             
+             <span class="image-link">
           <img src="images/orgi aliène_instal.jpg" alt="Projet Orgie aliène sur tapis de glaise">
+               <span class="click-label">click here</span>
+                </span>
+             
+             <span class="image-link">
           <img src="images/orgi aliène_instal4.jpg" alt="Projet Orgie aliène sur tapis de glaise">
+               <span class="click-label">click here</span>
+                </span>
+             
+             <span class="image-link">
           <img src="images/orgi aliène_instal7.jpg" alt="Projet Orgie aliène sur tapis de glaise">
+               <span class="click-label">click here</span>
+                </span>
+             
+             <span class="image-link">
           <img src="images/orgi aliène_perfo5.TIF" alt="Projet Orgie aliène sur tapis de glaise">
+               <span class="click-label">click here</span>
+                </span>
         </div>
     <button class="carousel-arrow next" type="button" aria-label="Images suivantes">→</button>
     </div>
